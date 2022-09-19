@@ -1,4 +1,3 @@
-# SOURCE: https://cloud.google.com/kubernetes-engine/docs/tutorials/guestbook
 apiVersion: v1
 kind: Service
 metadata:
@@ -9,6 +8,8 @@ metadata:
     role: leader
     tier: backend
 spec:
+  # this services does not expose any public port
+  type: ClusterIP # this is the default value
   ports:
   - port: 6379
     targetPort: 6379
